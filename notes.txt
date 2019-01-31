@@ -1,0 +1,19 @@
+The renaming process happens in the following way:
+(NDynamicsOutliner rename) -> 
+Maya rename -> 
+NDynamicsOutliner rename -> 
+Playground rename
+
+This way the Maya-rename is always reflected in the NDynamicsOutliner. The Playground only receiving name-changes puts him at the end of the chain (no possibility to rename nodes from the DockWidgets in the playground)
+
+################################################################
+
+The attribute setting process happens in the following way:
+(QWidget attr change) -> 
+Maya attr change -> 
+QWidget attr change
+
+This way the Maya attr change always takes precedence and it's ensured that the UI doesn't provide bogus values. Once the Maya-attr is set that value is propagated to the UI.
+
+################################################################
+
